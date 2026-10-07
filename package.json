@@ -1,0 +1,61 @@
+{
+  "name": "dsh-share-card",
+  "version": "0.1.0",
+  "private": false,
+  "description": "DeepSeek Harness 对话截图美化器：点每条回复下面的「分享卡片」，把这段回答一键渲染成精美的 PNG 分享图（渐变背景、字体、配色、圆角、宽度、水印都能调，深浅两套主题、8 套渐变预设），可以直接导出下载或复制到剪贴板发群。纯浏览器端实现：不联网、不上传，卡片在你的机器上画好再导出。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "share-card",
+    "screenshot",
+    "png",
+    "conversation"
+  ],
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml"
+  },
+  "files": [
+    "lib",
+    "tools",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samsam560/chat-share-card.git"
+  },
+  "homepage": "https://github.com/samsam560/chat-share-card#readme",
+  "bugs": {
+    "url": "https://github.com/samsam560/chat-share-card/issues"
+  },
+  "author": "samsam560",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-slots"
+      ],
+      "platform": "web"
+    },
+    "engines": {
+      "dsh": ">=0.1.5-rc.1"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
